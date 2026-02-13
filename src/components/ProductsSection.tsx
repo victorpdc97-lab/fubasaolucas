@@ -14,7 +14,7 @@ const ProductsSection = () => (
           Produtos <span className="text-primary">Artesanais</span>
         </h2>
       </ScrollReveal>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="flex justify-center max-w-md mx-auto">
         {products.map((p, i) => (
           <ScrollReveal key={p.name} delay={i * 150}>
             <div className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
