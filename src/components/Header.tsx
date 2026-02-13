@@ -51,7 +51,7 @@ const Header = () => {
             onClick={() => scrollTo("#home")}
             className="transition-transform hover:scale-105"
           >
-            <img src={logo} alt="Fubá São Lucas" className="h-14 w-auto" />
+            <img src={logo} alt="Fubá São Lucas" className="h-[58.8px] w-auto" />
           </button>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
