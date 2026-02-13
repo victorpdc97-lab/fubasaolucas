@@ -1,0 +1,90 @@
+import { Target, Eye, Heart, BookOpen } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
+import galleryMill1 from "@/assets/gallery-mill-1.jpg";
+import galleryMill2 from "@/assets/gallery-mill-2.jpg";
+import galleryMill3 from "@/assets/gallery-mill-3.jpg";
+
+const galleryImages = [
+  { src: galleryMill1, alt: "Moinho d'água" },
+  { src: galleryMill2, alt: "Pedras de moagem" },
+  { src: galleryMill3, alt: "Seleção do milho" },
+  { src: galleryMill1, alt: "Estrutura do moinho" },
+  { src: galleryMill2, alt: "Processo de moagem" },
+  { src: galleryMill3, alt: "Milho selecionado" },
+];
+
+const InstitutionalSection = () => (
+  <section id="institucional" className="section-padding bg-background">
+    <div className="section-container">
+      <ScrollReveal>
+        <p className="label-text text-accent text-center mb-2">Nossa História</p>
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">Institucional</h2>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <BookOpen className="w-10 h-10 text-primary mx-auto mb-4" />
+          <h3 className="font-heading font-bold text-2xl mb-4">Nossa História</h3>
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            Em março de 2012, alugamos a Fazenda dos Motta em Itatiaiu, município de Santa Terezinha de Minas, MG.
+            Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje
+            contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <ScrollReveal delay={0}>
+          <div className="text-center p-6">
+            <Heart className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading font-bold text-xl mb-3">Princípios</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Buscamos sempre o melhor produto de nossos produtores e fornecedores para o consumo humano, com rigoroso
+              controle de qualidade em todas as etapas.
+            </p>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={150}>
+          <div className="text-center p-6">
+            <Target className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading font-bold text-xl mb-3">Missão</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Colocar no mercado produtos 100% naturais e artesanais, mantendo a tradição e a originalidade do
+              verdadeiro fubá de moinho d'água.
+            </p>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={300}>
+          <div className="text-center p-6">
+            <Eye className="w-10 h-10 text-accent mx-auto mb-4" />
+            <h3 className="font-heading font-bold text-xl mb-3">Visão</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Conquistar o reconhecimento dos consumidores como um produto original e confiável, referência em qualidade
+              no segmento.
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      <ScrollReveal>
+        <h3 className="font-heading font-bold text-2xl text-center mb-8">Nossa Estrutura</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {galleryImages.map((img, i) => (
+            <div
+              key={i}
+              className="aspect-square rounded-xl overflow-hidden group cursor-pointer"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+);
+
+export default InstitutionalSection;
