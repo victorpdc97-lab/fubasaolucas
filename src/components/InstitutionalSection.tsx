@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Target, Eye, Heart, BookOpen } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import AnimatedCounter from "./AnimatedCounter";
 import ImageLightbox from "./ImageLightbox";
 import estrutura1 from "@/assets/estrutura-1.jpg";
 import estrutura2 from "@/assets/estrutura-2.jpg";
@@ -49,6 +50,15 @@ const InstitutionalSection = () => {
                 Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje
                 contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
               </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Animated Counters */}
+          <ScrollReveal>
+            <div className="grid grid-cols-3 gap-8 mb-16 max-w-2xl mx-auto">
+              <AnimatedCounter end={60} prefix="+" label="Jogos de Pedras" />
+              <AnimatedCounter end={2012} label="Desde" duration={2500} />
+              <AnimatedCounter end={100} suffix="%" label="Natural" />
             </div>
           </ScrollReveal>
 
