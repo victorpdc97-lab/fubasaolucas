@@ -1,16 +1,23 @@
 import { Target, Eye, Heart, BookOpen } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import galleryMill1 from "@/assets/gallery-mill-1.jpg";
-import galleryMill2 from "@/assets/gallery-mill-2.jpg";
-import galleryMill3 from "@/assets/gallery-mill-3.jpg";
+import estrutura1 from "@/assets/estrutura-1.jpg";
+import estrutura2 from "@/assets/estrutura-2.jpg";
+import estrutura3 from "@/assets/estrutura-3.jpg";
+import estrutura4 from "@/assets/estrutura-4.jpg";
+import estrutura5 from "@/assets/estrutura-5.jpg";
+import estrutura6 from "@/assets/estrutura-6.jpg";
+import estrutura7 from "@/assets/estrutura-7.jpg";
+import estrutura8 from "@/assets/estrutura-8.jpg";
 
 const galleryImages = [
-  { src: galleryMill1, alt: "Moinho d'água" },
-  { src: galleryMill2, alt: "Pedras de moagem" },
-  { src: galleryMill3, alt: "Seleção do milho" },
-  { src: galleryMill1, alt: "Estrutura do moinho" },
-  { src: galleryMill2, alt: "Processo de moagem" },
-  { src: galleryMill3, alt: "Milho selecionado" },
+  { src: estrutura1, alt: "Produção artesanal São Lucas" },
+  { src: estrutura2, alt: "Empacotamento do fubá" },
+  { src: estrutura3, alt: "Pedras de moagem em operação" },
+  { src: estrutura4, alt: "Linha de moinhos d'água" },
+  { src: estrutura5, alt: "Milho selecionado para moagem" },
+  { src: estrutura6, alt: "Alimentação do moinho" },
+  { src: estrutura7, alt: "Controle de qualidade" },
+  { src: estrutura8, alt: "Pedras de moagem tradicionais" },
 ];
 
 const InstitutionalSection = () => (
