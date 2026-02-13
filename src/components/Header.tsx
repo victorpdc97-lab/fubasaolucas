@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, Mail, Phone } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -48,12 +49,9 @@ const Header = () => {
         <div className="section-container flex items-center justify-between py-4">
           <button
             onClick={() => scrollTo("#home")}
-            className={cn(
-              "font-heading font-bold text-xl transition-colors",
-              scrolled ? "text-primary" : "text-dark-foreground"
-            )}
+            className="transition-transform hover:scale-105"
           >
-            Fubá São Lucas
+            <img src={logo} alt="Fubá São Lucas" className="h-12 w-auto" />
           </button>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
