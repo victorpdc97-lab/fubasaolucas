@@ -97,7 +97,7 @@ const InstitutionalSection = () => {
 
           <ScrollReveal>
             <h3 className="font-heading font-bold text-2xl text-center mb-8">Nossa Estrutura</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {galleryImages.map((img, i) => (
                 <div
                   key={i}
