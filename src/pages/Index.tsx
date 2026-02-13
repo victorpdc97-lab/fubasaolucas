@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import VideoSection from "@/components/VideoSection";
 import CTABanner from "@/components/CTABanner";
 import InstitutionalSection from "@/components/InstitutionalSection";
 import ProductsSection from "@/components/ProductsSection";
@@ -19,9 +18,7 @@ const Index = () => (
       <HeroSection />
       <WaveDivider to="bg-background" />
       <FeaturesSection />
-      <WaveDivider to="bg-dark" />
-      <VideoSection />
-      <WaveDivider from="bg-dark" to="bg-primary" />
+      <WaveDivider to="bg-primary" />
       <CTABanner />
       <WaveDivider from="bg-primary" to="bg-background" />
       <InstitutionalSection />
