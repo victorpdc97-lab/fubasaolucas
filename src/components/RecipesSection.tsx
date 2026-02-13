@@ -1,7 +1,14 @@
+import { useState } from "react";
 import recipeBolo1 from "@/assets/recipe-bolo-goiabada.jpg";
 import recipeBolo2 from "@/assets/recipe-bolo-diet.jpg";
 import recipeBolo3 from "@/assets/recipe-bolo-simples.jpg";
 import ScrollReveal from "./ScrollReveal";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const recipes = [
   {
@@ -24,46 +31,69 @@ const recipes = [
   },
 ];
 
-const RecipesSection = () => (
-  <section id="receitas" className="section-padding bg-muted">
-    <div className="section-container">
-      <ScrollReveal>
-        <p className="label-text text-accent text-center mb-2">Receitas</p>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
-          Receitas com <span className="text-primary">Fubá São Lucas</span>
-        </h2>
-      </ScrollReveal>
-      <div className="grid lg:grid-cols-3 gap-8">
-        {recipes.map((r, i) => (
-          <ScrollReveal key={r.title} delay={i * 150}>
-            <div className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-              <div className="aspect-[5/4] overflow-hidden">
-                <img src={r.image} alt={r.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-heading font-bold text-lg mb-4">{r.title}</h3>
-                <div className="mb-4">
-                  <p className="label-text text-primary mb-2">Ingredientes</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    {r.ingredients.map((ing, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                        {ing}
-                      </li>
-                    ))}
-                  </ul>
+const RecipesSection = () => {
+  const [selectedRecipe, setSelectedRecipe] = useState<typeof recipes[0] | null>(null);
+
+  return (
+    <section id="receitas" className="section-padding bg-muted">
+      <div className="section-container">
+        <ScrollReveal>
+          <p className="label-text text-accent text-center mb-2">Receitas</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
+            Receitas com <span className="text-primary">Fubá São Lucas</span>
+          </h2>
+        </ScrollReveal>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {recipes.map((r, i) => (
+            <ScrollReveal key={r.title} delay={i * 150}>
+              <div
+                className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-2 group"
+                onClick={() => setSelectedRecipe(r)}
+              >
+                <div className="aspect-[5/4] overflow-hidden">
+                  <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div>
-                  <p className="label-text text-primary mb-2">Modo de Preparo</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{r.instructions}</p>
+                <div className="p-6">
+                  <h3 className="font-heading font-bold text-lg mb-2">{r.title}</h3>
+                  <p className="text-sm text-muted-foreground">Clique para ver a receita completa</p>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
-        ))}
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+
+      <Dialog open={!!selectedRecipe} onOpenChange={() => setSelectedRecipe(null)}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          {selectedRecipe && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-heading text-xl">{selectedRecipe.title}</DialogTitle>
+              </DialogHeader>
+              <div className="aspect-video rounded-xl overflow-hidden mb-4">
+                <img src={selectedRecipe.image} alt={selectedRecipe.title} className="w-full h-full object-cover" />
+              </div>
+              <div className="mb-4">
+                <p className="label-text text-primary mb-2">Ingredientes</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  {selectedRecipe.ingredients.map((ing, j) => (
+                    <li key={j} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                      {ing}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="label-text text-primary mb-2">Modo de Preparo</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{selectedRecipe.instructions}</p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+};
 
 export default RecipesSection;

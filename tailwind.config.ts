@@ -88,11 +88,16 @@ export default {
           "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "whatsapp-pulse": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(37, 211, 102, 0.5)" },
+          "50%": { boxShadow: "0 0 0 14px rgba(37, 211, 102, 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
+        "whatsapp-pulse": "whatsapp-pulse 2s ease-in-out infinite",
       },
     },
   },
