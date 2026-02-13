@@ -43,17 +43,17 @@ const RecipesSection = () => {
             Receitas com <span className="text-primary">Fubá São Lucas</span>
           </h2>
         </ScrollReveal>
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
           {recipes.map((r, i) => (
-            <ScrollReveal key={r.title} delay={i * 150}>
+            <ScrollReveal key={r.title} delay={i * 150} className="h-full">
               <div
-                className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-2 group"
+                className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-2 group h-full flex flex-col"
                 onClick={() => setSelectedRecipe(r)}
               >
                 <div className="aspect-[5/4] overflow-hidden">
                   <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col justify-center">
                   <h3 className="font-heading font-bold text-lg mb-2">{r.title}</h3>
                   <p className="text-sm text-muted-foreground">Clique para ver a receita completa</p>
                 </div>
