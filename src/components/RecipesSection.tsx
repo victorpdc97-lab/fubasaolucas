@@ -1,6 +1,6 @@
 import { useState } from "react";
 import recipeBolo1 from "@/assets/recipe-bolo-goiabada.jpg";
-import recipeBolo2 from "@/assets/recipe-bolo-diet.jpg";
+import recipeBolo2 from "@/assets/recipe-bolo-diet-new.jpg";
 import recipeBolo3 from "@/assets/recipe-bolo-simples.jpg";
 import ScrollReveal from "./ScrollReveal";
 import {
