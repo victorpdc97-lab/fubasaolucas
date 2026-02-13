@@ -1,12 +1,8 @@
 import productFuba from "@/assets/product-fuba.jpg";
-import productFarinha from "@/assets/product-farinha.jpg";
-import productCanjiquinha from "@/assets/product-canjiquinha.jpg";
 import ScrollReveal from "./ScrollReveal";
 
 const products = [
   { image: productFuba, name: "Fubá Moinho D'água", weight: "1000g", description: "Fubá artesanal moído em moinho d'água tradicional, preservando todo o sabor e nutrientes do milho." },
-  { image: productFarinha, name: "Farinha de Fubá Torrado", weight: "500g", description: "Farinha de fubá torrada artesanalmente, perfeita para receitas tradicionais mineiras." },
-  { image: productCanjiquinha, name: "Canjiquinha", weight: "500g", description: "Canjiquinha de milho selecionado, ideal para preparar pratos saborosos e nutritivos." },
 ];
 
 const ProductsSection = () => (
