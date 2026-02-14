@@ -13,15 +13,15 @@ import estrutura7 from "@/assets/estrutura-7.jpg";
 import estrutura8 from "@/assets/estrutura-8.jpg";
 
 const galleryImages = [
-  { src: estrutura1, alt: "Produção artesanal São Lucas" },
-  { src: estrutura2, alt: "Empacotamento do fubá" },
-  { src: estrutura3, alt: "Pedras de moagem em operação" },
-  { src: estrutura4, alt: "Linha de moinhos d'água" },
-  { src: estrutura5, alt: "Milho selecionado para moagem" },
-  { src: estrutura6, alt: "Alimentação do moinho" },
-  { src: estrutura7, alt: "Controle de qualidade" },
-  { src: estrutura8, alt: "Pedras de moagem tradicionais" },
-];
+{ src: estrutura1, alt: "Produção artesanal São Lucas" },
+{ src: estrutura2, alt: "Empacotamento do fubá" },
+{ src: estrutura3, alt: "Pedras de moagem em operação" },
+{ src: estrutura4, alt: "Linha de moinhos d'água" },
+{ src: estrutura5, alt: "Milho selecionado para moagem" },
+{ src: estrutura6, alt: "Alimentação do moinho" },
+{ src: estrutura7, alt: "Controle de qualidade" },
+{ src: estrutura8, alt: "Pedras de moagem tradicionais" }];
+
 
 const InstitutionalSection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -46,9 +46,9 @@ const InstitutionalSection = () => {
               <BookOpen className="w-10 h-10 text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold text-2xl mb-4">Nossa História</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Em março de 2012, alugamos a Fazenda dos Motta em Itatiaiuçu, município de Santa Terezinha de Minas, MG.
-                Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje
-                contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
+                Em março de 2002, alugamos uma fazenda no Córrego dos Motta em Itatiaiuçu, município de Santa Terezinha de Minas, MG. Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
+              
+
               </p>
             </div>
           </ScrollReveal>
@@ -98,19 +98,19 @@ const InstitutionalSection = () => {
           <ScrollReveal>
             <h3 className="font-heading font-bold text-2xl text-center mb-8">Nossa Estrutura</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {galleryImages.map((img, i) => (
-                <div
-                  key={i}
-                  className="aspect-square rounded-xl overflow-hidden group cursor-pointer"
-                  onClick={() => handleImageClick(i)}
-                >
+              {galleryImages.map((img, i) =>
+              <div
+                key={i}
+                className="aspect-square rounded-xl overflow-hidden group cursor-pointer"
+                onClick={() => handleImageClick(i)}>
+
                   <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+
                 </div>
-              ))}
+              )}
             </div>
           </ScrollReveal>
         </div>
@@ -120,10 +120,10 @@ const InstitutionalSection = () => {
         images={galleryImages}
         initialIndex={selectedImageIndex}
         isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-      />
-    </>
-  );
+        onClose={() => setLightboxOpen(false)} />
+
+    </>);
+
 };
 
 export default InstitutionalSection;
