@@ -46,7 +46,7 @@ const InstitutionalSection = () => {
               <BookOpen className="w-10 h-10 text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold text-2xl mb-4">Nossa História</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Em março de 2002, alugamos uma fazenda no Córrego dos Motta em Itatiaiuçu, município de Santa Terezinha de Minas, MG. Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
+                Em março de 2002, alugamos uma fazenda no Córrego dos Motta em Itatiaiuçu, MG. Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.
               
 
               </p>
