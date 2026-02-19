@@ -15,7 +15,15 @@ const ContactSection = () => {
       toast.error("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-    toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    const texto = [
+      `Olá! Meu nome é ${form.nome}.`,
+      form.assunto ? `Assunto: ${form.assunto}` : "",
+      `Mensagem: ${form.mensagem}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const url = `https://wa.me/5531986595483?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setForm({ nome: "", assunto: "", mensagem: "" });
   };
 
