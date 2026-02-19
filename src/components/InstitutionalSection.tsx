@@ -57,7 +57,7 @@ const InstitutionalSection = () => {
           <ScrollReveal>
             <div className="grid grid-cols-3 gap-8 mb-16 max-w-2xl mx-auto">
               <AnimatedCounter end={60} prefix="+" label="Jogos de Pedras" />
-              <AnimatedCounter end={2012} label="Desde" duration={2500} />
+              <AnimatedCounter end={2002} label="Desde" duration={2500} />
               <AnimatedCounter end={100} suffix="%" label="Natural" />
             </div>
           </ScrollReveal>
