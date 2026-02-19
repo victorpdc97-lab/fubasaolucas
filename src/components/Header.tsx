@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, Mail, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
@@ -32,9 +32,6 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="bg-primary text-primary-foreground hidden sm:block">
         <div className="section-container flex justify-end gap-6 py-1.5 text-xs">
-          <a href="mailto:contato@fubasaolucas.com.br" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-            <Mail className="w-3 h-3" /> contato@fubasaolucas.com.br
-          </a>
           <a href="tel:+5531986595483" className="flex items-center gap-1.5 hover:text-accent transition-colors">
             <Phone className="w-3 h-3" /> (31) 98659-5483
           </a>

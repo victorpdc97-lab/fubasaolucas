@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,16 +7,16 @@ import { toast } from "sonner";
 import ScrollReveal from "./ScrollReveal";
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ nome: "", email: "", assunto: "", mensagem: "" });
+  const [form, setForm] = useState({ nome: "", assunto: "", mensagem: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.nome.trim() || !form.email.trim() || !form.mensagem.trim()) {
+    if (!form.nome.trim() || !form.mensagem.trim()) {
       toast.error("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
     toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-    setForm({ nome: "", email: "", assunto: "", mensagem: "" });
+    setForm({ nome: "", assunto: "", mensagem: "" });
   };
 
   return (
@@ -32,7 +32,6 @@ const ContactSection = () => {
           <ScrollReveal>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input placeholder="Nome *" value={form.nome} onChange={(e) => setForm((f) => ({ ...f, nome: e.target.value }))} />
-              <Input type="email" placeholder="E-mail *" value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} />
               <Input placeholder="Assunto" value={form.assunto} onChange={(e) => setForm((f) => ({ ...f, assunto: e.target.value }))} />
               <Textarea placeholder="Mensagem *" rows={5} value={form.mensagem} onChange={(e) => setForm((f) => ({ ...f, mensagem: e.target.value }))} />
               <Button type="submit" size="lg" className="w-full">
@@ -50,10 +49,17 @@ const ContactSection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h4 className="font-heading font-semibold">E-mail</h4>
-                  <p className="text-muted-foreground">contato@fubasaolucas.com.br</p>
+                  <h4 className="font-heading font-semibold">WhatsApp</h4>
+                  <a
+                    href="https://wa.me/5531986595483"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    (31) 98659-5483
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
