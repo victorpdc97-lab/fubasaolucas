@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { MessageCircle, Phone, MapPin } from "lucide-react";
 
 const footerLinks = [
   { label: "Home", href: "#home" },
@@ -45,9 +45,14 @@ const Footer = () => {
               <p className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0" /> R. Dois, 200 - Canjicas, Itatiaiu - MG
               </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-accent flex-shrink-0" /> contato@fubasaolucas.com.br
-              </p>
+              <a
+                href="https://wa.me/5531986595483"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-accent transition-colors"
+              >
+                <MessageCircle className="w-4 h-4 text-accent flex-shrink-0" /> WhatsApp: (31) 98659-5483
+              </a>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0" /> (31) 98659-5483
               </p>
