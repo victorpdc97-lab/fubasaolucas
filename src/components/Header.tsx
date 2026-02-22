@@ -15,11 +15,18 @@ const navLinks = [
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    let lastY = window.scrollY;
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 50);
+      setHidden(y > 100 && y > lastY);
+      lastY = y;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -29,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-transform duration-300", hidden && "-translate-y-full")}>
       <div className="bg-primary text-primary-foreground hidden sm:block">
         <div className="section-container flex justify-end gap-6 py-1.5 text-xs">
           <a href="tel:+5531986595483" className="flex items-center gap-1.5 hover:text-accent transition-colors">
