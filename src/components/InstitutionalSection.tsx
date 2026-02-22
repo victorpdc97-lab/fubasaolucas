@@ -3,14 +3,14 @@ import { Target, Eye, Heart, BookOpen } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import AnimatedCounter from "./AnimatedCounter";
 import ImageLightbox from "./ImageLightbox";
-import estrutura1 from "@/assets/estrutura-1.jpg";
-import estrutura2 from "@/assets/estrutura-2.jpg";
-import estrutura3 from "@/assets/estrutura-3.jpg";
-import estrutura4 from "@/assets/estrutura-4.jpg";
-import estrutura5 from "@/assets/estrutura-5.jpg";
-import estrutura6 from "@/assets/estrutura-6.jpg";
-import estrutura7 from "@/assets/estrutura-7.jpg";
-import estrutura8 from "@/assets/estrutura-8.jpg";
+import estrutura1 from "@/assets/estrutura-1.webp";
+import estrutura2 from "@/assets/estrutura-2.webp";
+import estrutura3 from "@/assets/estrutura-3.webp";
+import estrutura4 from "@/assets/estrutura-4.webp";
+import estrutura5 from "@/assets/estrutura-5.webp";
+import estrutura6 from "@/assets/estrutura-6.webp";
+import estrutura7 from "@/assets/estrutura-7.webp";
+import estrutura8 from "@/assets/estrutura-8.webp";
 
 const galleryImages = [
 { src: estrutura1, alt: "Produção artesanal São Lucas" },
@@ -99,17 +99,19 @@ const InstitutionalSection = () => {
             <h3 className="font-heading font-bold text-2xl text-center mb-8">Nossa Estrutura</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {galleryImages.map((img, i) =>
-              <div
+              <button
                 key={i}
+                type="button"
                 className="aspect-square rounded-xl overflow-hidden group cursor-pointer"
                 onClick={() => handleImageClick(i)}>
 
                   <img
                   src={img.src}
                   alt={img.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 
-                </div>
+                </button>
               )}
             </div>
           </ScrollReveal>

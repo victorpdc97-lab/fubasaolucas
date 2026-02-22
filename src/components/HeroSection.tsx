@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import heroImg from "@/assets/hero-bg.jpg";
+import heroImg from "@/assets/hero-bg.webp";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,8 +27,8 @@ const HeroSection = () => {
         <img
           src={heroImg}
           alt="Campo de milho"
-          className="w-full h-full object-cover"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          className="w-full h-full object-cover will-change-transform"
+          style={{ transform: `translate3d(0, ${scrollY * 0.3}px, 0)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-dark/90" />
       </div>

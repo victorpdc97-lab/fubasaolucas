@@ -1,4 +1,4 @@
-import productFuba from "@/assets/product-fuba.jpg";
+import productFuba from "@/assets/product-fuba.webp";
 import ScrollReveal from "./ScrollReveal";
 
 const products = [
@@ -19,7 +19,7 @@ const ProductsSection = () => (
           <ScrollReveal key={p.name} delay={i * 150}>
             <div className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
               <div className="aspect-square overflow-hidden">
-                <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <span className="label-text text-accent">{p.weight}</span>

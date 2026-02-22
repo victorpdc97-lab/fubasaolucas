@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, Phone } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className={cn("fixed top-0 left-0 right-0 z-50 transition-transform duration-300", hidden && "-translate-y-full")}>
-      <div className="bg-primary text-primary-foreground hidden sm:block">
+      <div className="bg-primary text-primary-foreground">
         <div className="section-container flex justify-end gap-6 py-1.5 text-xs">
           <a href="tel:+5531986595483" className="flex items-center gap-1.5 hover:text-accent transition-colors">
             <Phone className="w-3 h-3" /> (31) 98659-5483
