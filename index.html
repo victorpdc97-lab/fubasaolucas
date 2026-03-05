@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fubá São Lucas - Produtos 100% Naturais e Artesanais</title>
+  <meta name="description" content="Fubá São Lucas - Produtos 100% naturais e artesanais, mantendo a tradição e originalidade do verdadeiro fubá de moinho d'água desde 2002." />
+  <meta property="og:title" content="Fubá São Lucas - Produtos 100% Naturais e Artesanais" />
+  <meta property="og:description" content="Fubá São Lucas - Produtos 100% naturais e artesanais, mantendo a tradição e originalidade do verdadeiro fubá de moinho d'água desde 2002." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/png" href="https://fubasaolucas.com.br/favicon.png" />
+  <link rel="apple-touch-icon" href="https://fubasaolucas.com.br/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-earth: #2C1810;
+      --color-earth-light: #4A3728;
+      --color-corn: #D4A017;
+      --color-corn-light: #E8C547;
+      --color-corn-dark: #A67C00;
+      --color-cream: #FAF6F0;
+      --color-cream-dark: #F0E8D8;
+      --color-forest: #2D5016;
+      --color-forest-light: #3E6B22;
+      --color-warm-white: #FFFCF5;
+      --color-brown-soft: #8B6F47;
+      --color-overlay: rgba(44, 24, 16, 0.65);
+
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Outfit', sans-serif;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-earth);
+      background: var(--color-cream);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* ============ UTILITIES ============ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-padding { padding: 100px 0; }
+    .text-center { text-align: center; }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-corn-dark);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--color-earth);
+      margin-bottom: 20px;
+    }
+
+    .section-title strong {
+      font-weight: 600;
+      color: var(--color-forest);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-brown-soft);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    /* ============ ANIMATIONS ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+    .reveal-delay-7 { transition-delay: 0.7s; }
+    .reveal-delay-8 { transition-delay: 0.8s; }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-scale, .reveal-left, .reveal-right {
+        opacity: 1; transform: none; transition: none;
+      }
+    }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    .navbar.scrolled {
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 20px rgba(44, 24, 16, 0.08);
+      padding: 12px 0;
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .navbar-logo img {
+      height: 122px;
+      width: auto;
+      transition: height 0.4s var(--ease-out-expo);
+    }
+    .navbar.scrolled .navbar-logo img { height: 80px; }
+    .navbar-logo span {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      transition: color 0.4s;
+    }
+    .navbar.scrolled .navbar-logo span { color: var(--color-earth); }
+
+    .navbar-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .navbar-links a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .navbar.scrolled .navbar-links a { color: var(--color-earth-light); }
+    .navbar-links a:hover { color: var(--color-corn); }
+    .navbar-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-corn);
+      transition: width 0.3s var(--ease-out-expo);
+    }
+    .navbar-links a:hover::after { width: 100%; }
+
+    .navbar-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--color-corn);
+      color: var(--color-earth) !important;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      letter-spacing: 0.02em;
+    }
+    .navbar-cta:hover {
+      background: var(--color-corn-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 160, 23, 0.4);
+    }
+    .navbar-cta::after { display: none !important; }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 32px;
+      height: 24px;
+      position: relative;
+      z-index: 110;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+      position: absolute;
+      left: 0;
+    }
+    .navbar.scrolled .menu-toggle span { background: var(--color-earth); }
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .menu-toggle span:nth-child(3) { bottom: 0; }
+    .menu-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      transition: transform 8s linear;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(44, 24, 16, 0.3) 0%,
+          rgba(44, 24, 16, 0.5) 40%,
+          rgba(44, 24, 16, 0.85) 100%
+        );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 24px 80px;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(212, 160, 23, 0.15);
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-corn-light);
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-corn);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--color-corn-light);
+    }
+    .hero-description {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: var(--color-corn);
+      color: var(--color-earth);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.35s var(--ease-out-back);
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover {
+      background: var(--color-corn-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(212, 160, 23, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.35s;
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: float-down 2s ease-in-out infinite;
+    }
+    .hero-scroll-indicator .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+    @keyframes float-down {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============ DIFERENCIAIS ============ */
+    .diferenciais {
+      background:
+        linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 50%, var(--color-cream) 100%);
+      position: relative;
+    }
+    .diferenciais::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-corn), transparent);
+    }
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .diferencial-card {
+      background: var(--color-warm-white);
+      border: 1px solid rgba(212, 160, 23, 0.12);
+      border-radius: 20px;
+      padding: 44px 32px;
+      text-align: center;
+      transition: all 0.4s var(--ease-out-expo);
+      position: relative;
+      overflow: hidden;
+    }
+    .diferencial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--color-corn);
+      border-radius: 0 0 3px 3px;
+      opacity: 0;
+      transition: opacity 0.4s, width 0.4s var(--ease-out-expo);
+    }
+    .diferencial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(44, 24, 16, 0.08);
+      border-color: rgba(212, 160, 23, 0.3);
+    }
+    .diferencial-card:hover::before { opacity: 1; width: 100%; }
+    .diferencial-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(45, 80, 22, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 1.8rem;
+    }
+    .diferencial-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--color-earth);
+    }
+    .diferencial-card p {
+      font-size: 0.92rem;
+      color: var(--color-brown-soft);
+      line-height: 1.7;
+    }
+
+    /* ============ ESTRUTURA (galeria) ============ */
+    .estrutura {
+      background: var(--color-earth);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .estrutura::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 160, 23, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(45, 80, 22, 0.06) 0%, transparent 50%);
+    }
+    .estrutura .section-label { color: var(--color-corn-light); }
+    .estrutura .section-title { color: #fff; }
+    .estrutura .section-title strong { color: var(--color-corn-light); }
+    .estrutura .section-subtitle { color: rgba(255,255,255,0.6); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44, 24, 16, 0.6), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item:hover::after { opacity: 1; }
+    .gallery-item .gallery-caption {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s var(--ease-out-expo);
+      z-index: 2;
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============ HISTORIA ============ */
+    .historia {
+      background:
+        linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+      position: relative;
+    }
+    .historia-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .historia-text h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .historia-text h2 strong { font-weight: 600; color: var(--color-forest); }
+    .historia-text p {
+      font-size: 1rem;
+      color: var(--color-brown-soft);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--color-warm-white);
+      border-radius: 16px;
+      border: 1px solid rgba(212, 160, 23, 0.1);
+    }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-corn-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--color-brown-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .missao-visao {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .mv-card {
+      padding: 36px 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 160, 23, 0.1);
+      background: var(--color-warm-white);
+      transition: all 0.4s;
+    }
+    .mv-card:hover {
+      border-color: rgba(212, 160, 23, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.06);
+    }
+    .mv-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mv-card p {
+      font-size: 0.9rem;
+      color: var(--color-brown-soft);
+      line-height: 1.75;
+    }
+
+    /* ============ PRODUTOS ============ */
+    .produtos {
+      background: var(--color-warm-white);
+      position: relative;
+    }
+    .produto-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .produto-image-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .produto-image-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--color-corn), var(--color-forest));
+      z-index: 0;
+      opacity: 0.3;
+    }
+    .produto-image-wrapper {
+      aspect-ratio: 1/1;
+    }
+    .produto-image-wrapper img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 27%;
+      transform: scale(1.03);
+      display: block;
+      border-radius: 24px;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+    .produto-image-wrapper:hover img { transform: scale(1.06); }
+    .produto-info h3 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--color-earth);
+    }
+    .produto-info p {
+      font-size: 1.05rem;
+      color: var(--color-brown-soft);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .produto-badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .produto-badge {
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .produto-badge--gold {
+      background: rgba(212, 160, 23, 0.12);
+      color: var(--color-corn-dark);
+      border: 1px solid rgba(212, 160, 23, 0.25);
+    }
+    .produto-badge--green {
+      background: rgba(45, 80, 22, 0.08);
+      color: var(--color-forest);
+      border: 1px solid rgba(45, 80, 22, 0.2);
+    }
+
+    /* ============ RECEITAS ============ */
+    .receitas {
+      background:
+        linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 50%, var(--color-cream) 100%);
+    }
+    .receitas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .receita-card {
+      background: var(--color-warm-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 160, 23, 0.08);
+      transition: all 0.4s var(--ease-out-expo);
+      cursor: pointer;
+    }
+    .receita-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(44, 24, 16, 0.1);
+      border-color: rgba(212, 160, 23, 0.3);
+    }
+    .receita-card-img {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .receita-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+    .receita-card:hover .receita-card-img img { transform: scale(1.08); }
+    .receita-card-body {
+      padding: 28px 24px;
+    }
+    .receita-card-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--color-earth);
+      line-height: 1.3;
+    }
+    .receita-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-corn-dark);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      padding: 8px 0;
+      transition: color 0.3s;
+    }
+    .receita-toggle:hover { color: var(--color-forest); }
+    .receita-toggle svg {
+      transition: transform 0.3s;
+    }
+    .receita-toggle.active svg { transform: rotate(180deg); }
+    .receita-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s var(--ease-out-expo);
+    }
+    .receita-detail.open { max-height: 600px; }
+    .receita-detail-inner {
+      padding-top: 16px;
+      border-top: 1px solid rgba(212, 160, 23, 0.1);
+    }
+    .receita-detail h4 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-earth);
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+    .receita-detail h4:first-child { margin-top: 0; }
+    .receita-detail ul {
+      list-style: none;
+      padding: 0;
+    }
+    .receita-detail li {
+      font-size: 0.88rem;
+      color: var(--color-brown-soft);
+      padding: 4px 0 4px 18px;
+      position: relative;
+    }
+    .receita-detail li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-corn);
+    }
+    .receita-detail .modo-preparo {
+      font-size: 0.9rem;
+      color: var(--color-brown-soft);
+      line-height: 1.75;
+    }
+
+    /* ============ DISTRIBUIDORES ============ */
+    .distribuidores {
+      background: var(--color-warm-white);
+      position: relative;
+    }
+    .distribuidores-address {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--color-brown-soft);
+      font-size: 0.95rem;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .distribuidores-address svg {
+      flex-shrink: 0;
+      color: var(--color-corn-dark);
+    }
+    .distribuidores-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .distribuidores-card {
+      background: var(--color-cream);
+      border-radius: 16px;
+      padding: 24px 20px;
+      border-left: 4px solid var(--color-corn);
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    .distribuidores-card:hover {
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
+      transform: translateY(-4px);
+    }
+    .distribuidores-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-earth);
+      margin-bottom: 4px;
+    }
+    .distribuidores-card p {
+      font-size: 0.85rem;
+      color: var(--color-brown-soft);
+    }
+
+    /* ============ CONTATO ============ */
+    .contato {
+      background: var(--color-earth);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .contato::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 90%, rgba(212, 160, 23, 0.08), transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(45, 80, 22, 0.06), transparent 50%);
+    }
+    .contato .section-label { color: var(--color-corn-light); }
+    .contato .section-title { color: #fff; }
+    .contato .section-title strong { color: var(--color-corn-light); }
+    .contato .section-subtitle { color: rgba(255,255,255,0.55); }
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .contato-info { display: flex; flex-direction: column; gap: 28px; }
+    .contato-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      transition: all 0.3s;
+    }
+    .contato-item:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(212, 160, 23, 0.3);
+      transform: translateX(6px);
+    }
+    .contato-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(212, 160, 23, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+    .contato-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: rgba(255,255,255,0.9);
+    }
+    .contato-item p,
+    .contato-item a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.3s;
+      line-height: 1.6;
+    }
+    .contato-item a:hover { color: var(--color-corn-light); }
+
+    .contato-map {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      aspect-ratio: 16/10;
+    }
+    .contato-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(0.3) contrast(1.1);
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: #1a0f0a;
+      color: rgba(255,255,255,0.5);
+      padding: 60px 0 32px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin-top: 16px;
+      max-width: 340px;
+    }
+    .footer-brand img { height: 44px; margin-bottom: 4px; }
+    .footer h5 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--color-corn); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    /* ============ WHATSAPP FLOAT ============ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 90;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+      transition: all 0.35s var(--ease-out-back);
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(37, 211, 102, 0.3);
+      animation: whatsapp-ring 2.5s infinite;
+    }
+    @keyframes whatsapp-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .historia-content { grid-template-columns: 1fr; gap: 48px; }
+      .produto-showcase { grid-template-columns: 1fr; gap: 40px; }
+      .receitas-grid { grid-template-columns: repeat(2, 1fr); }
+      .distribuidores-grid { grid-template-columns: repeat(2, 1fr); }
+      .contato-grid { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section-padding { padding: 72px 0; }
+      .menu-toggle { display: block; }
+      .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--color-earth);
+        padding: 100px 32px 32px;
+        transition: right 0.4s var(--ease-out-expo);
+        display: flex;
+        flex-direction: column;
+        z-index: 105;
+      }
+      .navbar-nav.open { right: 0; }
+      .navbar-links {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .navbar-links a { color: rgba(255,255,255,0.8) !important; font-size: 1.1rem; }
+      .navbar-cta { margin-top: 24px; text-align: center; justify-content: center; }
+      .overlay-menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 104;
+      }
+      .overlay-menu.active { display: block; }
+
+      .diferenciais-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .receitas-grid { grid-template-columns: 1fr; }
+      .distribuidores-grid { grid-template-columns: 1fr 1fr; }
+      .contato-grid { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      .hero h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+      .hero-actions { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stats-row { grid-template-columns: 1fr; }
+      .stat-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar-logo">
+        <img src="https://fubasaolucas.com.br/assets/logo-BZvNPCcB.webp" alt="Fubá São Lucas" />
+        <span>Fubá São Lucas</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar-nav" id="navbarNav">
+        <ul class="navbar-links">
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#receitas">Receitas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="overlay-menu" id="overlayMenu"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://fubasaolucas.com.br/assets/hero-bg-Dg6fWmIy.webp" alt="Campo de milho" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">Desde 2002</div>
+      <h1 class="reveal reveal-delay-1">Fubá <em>São Lucas</em></h1>
+      <p class="hero-description reveal reveal-delay-2">Produtos 100% naturais e artesanais, mantendo a tradição e originalidade do verdadeiro fubá de moinho d'água.</p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#historia" class="btn-primary">
+          Conheça Nossa História
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+        <a href="#contato" class="btn-secondary">Entre em Contato Conosco</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diferenciais section-padding">
+    <div class="container text-center">
+      <span class="section-label reveal">Princípios</span>
+      <h2 class="section-title reveal reveal-delay-1">Qualidade em cada <strong>detalhe</strong></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Do campo à sua mesa, cada etapa é cuidadosamente acompanhada.</p>
+
+      <div class="diferenciais-grid">
+        <div class="diferencial-card reveal reveal-delay-1">
+          <div class="diferencial-icon">&#127805;</div>
+          <h3>Milho Limpo</h3>
+          <p>Utilizamos apenas milho cuidadosamente limpo e selecionado, garantindo a pureza do nosso fubá.</p>
+        </div>
+        <div class="diferencial-card reveal reveal-delay-2">
+          <div class="diferencial-icon">&#127793;</div>
+          <h3>Selecionado</h3>
+          <p>Cada grão passa por rigoroso processo de seleção para garantir a melhor qualidade.</p>
+        </div>
+        <div class="diferencial-card reveal reveal-delay-3">
+          <div class="diferencial-icon">&#9728;&#65039;</div>
+          <h3>Secagem Natural</h3>
+          <p>Processo de secagem natural que preserva todos os nutrientes e o sabor autêntico do milho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRUTURA -->
+  <section class="estrutura section-padding">
+    <div class="container text-center">
+      <span class="section-label reveal">Conheça</span>
+      <h2 class="section-title reveal reveal-delay-1">Nossa <strong>Estrutura</strong></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Uma produção artesanal com 60 jogos de pedras de moagem.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal-scale reveal-delay-1">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-1-GiKBdKWx.webp" alt="Produção artesanal São Lucas" loading="lazy" />
+          <span class="gallery-caption">Produção artesanal</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-2">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-2-Cq2WpLm8.webp" alt="Empacotamento do fubá" loading="lazy" />
+          <span class="gallery-caption">Empacotamento</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-3">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-3-BiL5xr1O.webp" alt="Linha de moinhos d'água" loading="lazy" />
+          <span class="gallery-caption">Moinhos d'água</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-4">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-4-w7_YGxAz.webp" alt="Milho selecionado para moagem" loading="lazy" />
+          <span class="gallery-caption">Milho selecionado</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-5">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-5-Dnc00pME.webp" alt="Alimentação do moinho" loading="lazy" />
+          <span class="gallery-caption">Alimentação do moinho</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-6">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-6-DAQ2V2un.webp" alt="Controle de qualidade" loading="lazy" />
+          <span class="gallery-caption">Controle de qualidade</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-7">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-7-DFpnQKiR.webp" alt="Pedras de moagem em operação" loading="lazy" />
+          <span class="gallery-caption">Pedras de moagem</span>
+        </div>
+        <div class="gallery-item reveal-scale reveal-delay-8">
+          <img src="https://fubasaolucas.com.br/assets/estrutura-8-BtEWe8h7.webp" alt="Pedras de moagem tradicionais" loading="lazy" />
+          <span class="gallery-caption">Moagem tradicional</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTÓRIA -->
+  <section class="historia section-padding" id="historia">
+    <div class="container">
+      <div class="historia-content">
+        <div class="historia-text reveal-left">
+          <span class="section-label">Desde 2002</span>
+          <h2>Nossa <strong>História</strong></h2>
+          <p>Em março de 2002, alugamos uma fazenda no Córrego dos Motta em Itatiaiuçu, MG. Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.</p>
+
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="stat-number" data-count="60">0</div>
+              <div class="stat-label">Jogos de Pedras</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="2002">0</div>
+              <div class="stat-label">Desde</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Natural</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="missao-visao reveal-right">
+          <div class="mv-card">
+            <h4>&#9889; Qualidade</h4>
+            <p>Buscamos sempre o melhor produto de nossos produtores e fornecedores para o consumo humano, com rigoroso controle de qualidade em todas as etapas.</p>
+          </div>
+          <div class="mv-card">
+            <h4>&#127919; Missão</h4>
+            <p>Colocar no mercado produtos 100% naturais e artesanais, mantendo a tradição e a originalidade do verdadeiro fubá de moinho d'água.</p>
+          </div>
+          <div class="mv-card">
+            <h4>&#128065; Visão</h4>
+            <p>Conquistar o reconhecimento dos consumidores como um produto original e confiável, referência em qualidade no segmento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="produtos section-padding" id="produtos">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label reveal">Conheça</span>
+        <h2 class="section-title reveal reveal-delay-1">Nossos <strong>Produtos</strong></h2>
+      </div>
+
+      <div class="produto-showcase" style="margin-top: 48px;">
+        <div class="produto-image-wrapper reveal-left">
+          <img src="https://fubasaolucas.com.br/assets/product-fuba-14vhMfKX.webp" alt="Fubá Moinho D'água" loading="lazy" />
+        </div>
+        <div class="produto-info reveal-right">
+          <h3>Fubá Moinho D'água</h3>
+          <p>Fubá artesanal moído em moinho d'água tradicional, preservando todo o sabor e nutrientes do milho.</p>
+          <div class="produto-badges">
+            <span class="produto-badge produto-badge--gold">100% Natural</span>
+            <span class="produto-badge produto-badge--green">Artesanal</span>
+            <span class="produto-badge produto-badge--gold">Moinho D'água</span>
+          </div>
+          <a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." class="btn-primary" style="margin-top: 32px;" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Fale Conosco
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECEITAS -->
+  <section class="receitas section-padding" id="receitas">
+    <div class="container text-center">
+      <span class="section-label reveal">Deliciosas</span>
+      <h2 class="section-title reveal reveal-delay-1">Receitas com <strong>Fubá São Lucas</strong></h2>
+      <p class="section-subtitle reveal reveal-delay-2">Clique para ver a receita completa</p>
+
+      <div class="receitas-grid">
+        <!-- Receita 1 -->
+        <div class="receita-card reveal reveal-delay-1">
+          <div class="receita-card-img">
+            <img src="https://fubasaolucas.com.br/assets/recipe-bolo-goiabada-new-Dvnv26i9.webp" alt="Bolo de Fubá com Pedaços de Goiabada" loading="lazy" />
+          </div>
+          <div class="receita-card-body">
+            <h3>Bolo de Fubá com Pedaços de Goiabada</h3>
+            <button class="receita-toggle" onclick="toggleReceita(this)">
+              Ver receita
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="receita-detail">
+              <div class="receita-detail-inner">
+                <h4>Ingredientes</h4>
+                <ul>
+                  <li>Goiabada cortada em cubos</li>
+                  <li>4 ovos (claras separadas)</li>
+                  <li>Farinha de trigo</li>
+                  <li>2 xícaras de Fubá São Lucas</li>
+                  <li>Margarina, leite de coco</li>
+                  <li>Açúcar, raspa de limão</li>
+                  <li>Queijo ralado, leite, fermento</li>
+                </ul>
+                <h4>Modo de Preparo</h4>
+                <p class="modo-preparo">Bata as claras em neve. Misture as gemas com leite de coco, leite, margarina, queijo e raspa de limão. Adicione os ingredientes secos. Incorpore as claras em neve, o fermento e os pedaços de goiabada. Asse a 200°C por 40 minutos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Receita 2 -->
+        <div class="receita-card reveal reveal-delay-2">
+          <div class="receita-card-img">
+            <img src="https://fubasaolucas.com.br/assets/recipe-bolo-diet-new-Cq4VKj0r.webp" alt="Bolo de Fubá com Goiabada Diet" loading="lazy" />
+          </div>
+          <div class="receita-card-body">
+            <h3>Bolo de Fubá com Goiabada Diet</h3>
+            <button class="receita-toggle" onclick="toggleReceita(this)">
+              Ver receita
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="receita-detail">
+              <div class="receita-detail-inner">
+                <h4>Ingredientes</h4>
+                <ul>
+                  <li>Adoçante</li>
+                  <li>Gemas</li>
+                  <li>Óleo</li>
+                  <li>Farinha de trigo</li>
+                  <li>1 xícara de Fubá São Lucas</li>
+                  <li>Leite desnatado</li>
+                  <li>Fermento, erva-doce</li>
+                  <li>Claras em neve, goiabada diet</li>
+                </ul>
+                <h4>Modo de Preparo</h4>
+                <p class="modo-preparo">Bata o adoçante com as gemas, adicione óleo, farinha, fubá e leite alternando. Junte o fermento e erva-doce. Incorpore as claras em neve e goiabada diet em cubos. Asse a 180°C por 40 minutos em forma redonda de 24cm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Receita 3 -->
+        <div class="receita-card reveal reveal-delay-3">
+          <div class="receita-card-img">
+            <img src="https://fubasaolucas.com.br/assets/recipe-bolo-simples-C66n23KA.webp" alt="Bolo de Fubá" loading="lazy" />
+          </div>
+          <div class="receita-card-body">
+            <h3>Bolo de Fubá</h3>
+            <button class="receita-toggle" onclick="toggleReceita(this)">
+              Ver receita
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="receita-detail">
+              <div class="receita-detail-inner">
+                <h4>Ingredientes</h4>
+                <ul>
+                  <li>2 copos de Fubá São Lucas</li>
+                  <li>3 ovos</li>
+                  <li>2 copos de leite</li>
+                  <li>1 copo de óleo</li>
+                  <li>1 copo de farinha de trigo</li>
+                  <li>2 copos de açúcar</li>
+                  <li>2 colheres de Pó Royal</li>
+                  <li>Erva-doce (opcional)</li>
+                </ul>
+                <h4>Modo de Preparo</h4>
+                <p class="modo-preparo">Bata tudo no liquidificador até ficar homogêneo. Despeje em uma forma untada e enfarinhada. Leve ao forno pré-aquecido até dourar. Simples e delicioso!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTRIBUIDORES -->
+  <section class="distribuidores section-padding" id="distribuidores">
+    <div class="container text-center">
+      <span class="section-label reveal">Distribuidores</span>
+      <h2 class="section-title reveal reveal-delay-1">Onde <strong>Encontrar</strong></h2>
+      <div class="distribuidores-address reveal reveal-delay-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Rodovia BR-040 km 688 Kennedy, Contagem/MG - CEP 32.145-900
+      </div>
+
+      <div class="distribuidores-grid">
+        <div class="distribuidores-card reveal reveal-delay-1">
+          <h3>AF Distribuidora</h3>
+          <p>PAV U - Loja 13/15</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-2">
+          <h3>Ailton Geraldo MLP</h3>
+          <p>Setor H - Área 61/62</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-3">
+          <h3>BH Frutas</h3>
+          <p>PAV R - Loja 6</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-4">
+          <h3>Calábria</h3>
+          <p>PAV I - Lojas 01/03</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-1">
+          <h3>Cerealista Xique Xique</h3>
+          <p>PAV D1 - Lojas 08/09</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-2">
+          <h3>Comercial São Judas Tadeu</h3>
+          <p>PAV C - Loja 01</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-3">
+          <h3>Flex Distribuidora</h3>
+          <p>PAV 6 - Loja 08/10</p>
+        </div>
+        <div class="distribuidores-card reveal reveal-delay-4">
+          <h3>Frutas Linhares</h3>
+          <p>PAV Q - Lojas 33/35</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato section-padding" id="contato">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 56px;">
+        <span class="section-label reveal">Fale Conosco</span>
+        <h2 class="section-title reveal reveal-delay-1"><strong>Contato</strong></h2>
+        <p class="section-subtitle reveal reveal-delay-2">Estamos prontos para atender você e tirar todas as suas dúvidas</p>
+      </div>
+
+      <div class="contato-grid">
+        <div class="contato-info">
+          <div class="contato-item reveal reveal-delay-1">
+            <div class="contato-item-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Endereço</h4>
+              <p>R. Dois, 200 - Canjicas, Itatiaiuçu - MG</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." target="_blank" rel="noopener" style="text-decoration:none;">
+            <div class="contato-item reveal reveal-delay-2">
+              <div class="contato-item-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>(31) 98659-5483</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="tel:+5531986595483" style="text-decoration:none;">
+            <div class="contato-item reveal reveal-delay-3">
+              <div class="contato-item-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Telefone</h4>
+                <p>(31) 98659-5483</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="contato-map reveal-scale reveal-delay-2">
+          <iframe
+            src="https://maps.google.com/maps?q=Santa+Terezinha+de+Minas+MG&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Fubá São Lucas"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="https://fubasaolucas.com.br/assets/logo-BZvNPCcB.webp" alt="Fubá São Lucas" />
+          <p>Produtos 100% naturais e artesanais, mantendo a tradição e originalidade do verdadeiro fubá de moinho d'água desde 2002.</p>
+        </div>
+        <div>
+          <h5>Navegação</h5>
+          <ul class="footer-links">
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#receitas">Receitas</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contato</h5>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." target="_blank" rel="noopener">WhatsApp: (31) 98659-5483</a></li>
+            <li><a href="tel:+5531986595483">Telefone: (31) 98659-5483</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Fubá São Lucas - Todos os direitos reservados</span>
+        <span>Itatiaiuçu, MG</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // ===== SCROLL REVEAL =====
+    const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ===== NAVBAR SCROLL =====
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // ===== MOBILE MENU =====
+    const menuToggle = document.getElementById('menuToggle');
+    const navbarNav = document.getElementById('navbarNav');
+    const overlayMenu = document.getElementById('overlayMenu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbarNav.classList.toggle('open');
+      overlayMenu.classList.toggle('active');
+      document.body.style.overflow = navbarNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    overlayMenu.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navbarNav.classList.remove('open');
+      overlayMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    document.querySelectorAll('.navbar-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarNav.classList.remove('open');
+        overlayMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ===== COUNTER ANIMATION =====
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          if (!target) return;
+
+          const duration = 2000;
+          const startTime = performance.now();
+
+          function easeOutExpo(t) {
+            return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+          }
+
+          function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutExpo(progress);
+            const current = Math.floor(easedProgress * target);
+            el.textContent = current.toLocaleString('pt-BR');
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = target.toLocaleString('pt-BR');
+            }
+          }
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(el => {
+      counterObserver.observe(el);
+    });
+
+    // ===== RECEITA TOGGLE =====
+    function toggleReceita(btn) {
+      const detail = btn.nextElementSibling;
+      const isOpen = detail.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.receita-detail').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.receita-toggle').forEach(b => {
+        b.classList.remove('active');
+        b.innerHTML = 'Ver receita <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+      });
+
+      if (!isOpen) {
+        detail.classList.add('open');
+        btn.classList.add('active');
+        btn.innerHTML = 'Fechar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+      }
+    }
+
+    // ===== HERO PARALLAX =====
+    const heroBg = document.querySelector('.hero-bg img');
+    window.addEventListener('scroll', () => {
+      if (heroBg) {
+        const scrolled = window.scrollY;
+        heroBg.style.transform = 'scale(1.05) translateY(' + (scrolled * 0.15) + 'px)';
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
