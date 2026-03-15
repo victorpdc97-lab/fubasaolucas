@@ -1101,6 +1101,9 @@
     }
 
     @media (max-width: 768px) {
+      .hero { height: 100vh; }
+      .hero-bg canvas { display: none; }
+      .hero-bg img.hero-fallback { display: block !important; }
       .section-padding { padding: 72px 0; }
       .distribuidores-grid { grid-template-columns: repeat(2, 1fr); }
       .menu-toggle { display: block; }
