@@ -224,8 +224,6 @@
     }
     .navbar-cta:hover {
       background: var(--color-corn-light);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(212, 160, 23, 0.4);
     }
     .navbar-cta::after { display: none !important; }
 
@@ -313,18 +311,6 @@
       margin-bottom: 32px;
       backdrop-filter: blur(10px);
     }
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--color-corn);
-      border-radius: 50%;
-      animation: pulse-dot 2s infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.5); }
-    }
     .hero h1 {
       font-family: var(--font-heading);
       font-size: clamp(3rem, 8vw, 5.5rem);
@@ -371,8 +357,7 @@
     }
     .btn-primary:hover {
       background: var(--color-corn-light);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(212, 160, 23, 0.45);
+      box-shadow: 0 4px 16px rgba(212, 160, 23, 0.3);
     }
     .btn-secondary {
       display: inline-flex;
@@ -394,49 +379,14 @@
     .btn-secondary:hover {
       background: rgba(255,255,255,0.15);
       border-color: rgba(255,255,255,0.4);
-      transform: translateY(-2px);
     }
 
-    .hero-scroll-indicator {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      animation: float-down 2s ease-in-out infinite;
-    }
-    .hero-scroll-indicator .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-    }
-    @keyframes float-down {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
 
     /* ============ DIFERENCIAIS ============ */
     .diferenciais {
       background:
         linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 50%, var(--color-cream) 100%);
       position: relative;
-    }
-    .diferenciais::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-corn), transparent);
     }
     .diferenciais-grid {
       display: grid;
@@ -454,35 +404,9 @@
       position: relative;
       overflow: hidden;
     }
-    .diferencial-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--color-corn);
-      border-radius: 0 0 3px 3px;
-      opacity: 0;
-      transition: opacity 0.4s, width 0.4s var(--ease-out-expo);
-    }
     .diferencial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(44, 24, 16, 0.08);
-      border-color: rgba(212, 160, 23, 0.3);
-    }
-    .diferencial-card:hover::before { opacity: 1; width: 100%; }
-    .diferencial-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(45, 80, 22, 0.08));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 1.8rem;
+      box-shadow: 0 8px 30px rgba(44, 24, 16, 0.06);
+      border-color: rgba(212, 160, 23, 0.25);
     }
     .diferencial-card h3 {
       font-family: var(--font-heading);
@@ -699,9 +623,7 @@
       transition: all 0.4s;
     }
     .mv-card:hover {
-      border-color: rgba(212, 160, 23, 0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.06);
+      border-color: rgba(212, 160, 23, 0.25);
     }
     .mv-card h4 {
       font-family: var(--font-heading);
@@ -815,9 +737,8 @@
       cursor: pointer;
     }
     .receita-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 64px rgba(44, 24, 16, 0.1);
-      border-color: rgba(212, 160, 23, 0.3);
+      box-shadow: 0 8px 30px rgba(44, 24, 16, 0.07);
+      border-color: rgba(212, 160, 23, 0.2);
     }
     .receita-card-img {
       position: relative;
@@ -924,19 +845,6 @@
       gap: 12px;
       margin-bottom: 24px;
     }
-    .distribuidores-category-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.3rem;
-    }
-    .distribuidores-category-icon.ceasa { background: rgba(212, 160, 23, 0.12); }
-    .distribuidores-category-icon.varejo { background: rgba(45, 80, 22, 0.10); }
-    .distribuidores-category-icon.distrib { background: rgba(139, 111, 71, 0.10); }
     .distribuidores-category-title {
       font-family: var(--font-heading);
       font-size: 1.45rem;
@@ -972,8 +880,7 @@
     .distribuidores-card.varejo { border-left-color: var(--color-forest); }
     .distribuidores-card.distrib { border-left-color: var(--color-brown-soft); }
     .distribuidores-card:hover {
-      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
-      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(44, 24, 16, 0.06);
     }
     .distribuidores-card h3 {
       font-family: var(--font-heading);
@@ -1026,8 +933,7 @@
     }
     .contato-item:hover {
       background: rgba(255,255,255,0.08);
-      border-color: rgba(212, 160, 23, 0.3);
-      transform: translateX(6px);
+      border-color: rgba(212, 160, 23, 0.2);
     }
     .contato-item-icon {
       width: 48px;
@@ -1140,18 +1046,6 @@
       box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
     }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
-    .whatsapp-float::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 2px solid rgba(37, 211, 102, 0.3);
-      animation: whatsapp-ring 2.5s infinite;
-    }
-    @keyframes whatsapp-ring {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
@@ -1255,37 +1149,28 @@
           Conheça Nossa História
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
         </a>
-        <a href="#contato" class="btn-secondary">Entre em Contato Conosco</a>
+        <a href="#contato" class="btn-secondary">Fale com a gente</a>
       </div>
-    </div>
-    <div class="hero-scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
   <!-- DIFERENCIAIS -->
   <section class="diferenciais section-padding">
     <div class="container text-center">
-      <span class="section-label reveal">Princípios</span>
-      <h2 class="section-title reveal reveal-delay-1">Qualidade em cada <strong>detalhe</strong></h2>
-      <p class="section-subtitle reveal reveal-delay-2">Do campo à sua mesa, cada etapa é cuidadosamente acompanhada.</p>
+      <h2 class="section-title reveal">Qualidade em cada <strong>detalhe</strong></h2>
 
-      <div class="diferenciais-grid">
-        <div class="diferencial-card reveal reveal-delay-1">
-          <div class="diferencial-icon">&#127805;</div>
-          <h3>Milho Limpo</h3>
-          <p>Utilizamos apenas milho cuidadosamente limpo e selecionado, garantindo a pureza do nosso fubá.</p>
+      <div class="diferenciais-grid reveal">
+        <div class="diferencial-card">
+          <h3>Milho limpo</h3>
+          <p>Só entra milho bem cuidado e selecionado no nosso moinho.</p>
         </div>
-        <div class="diferencial-card reveal reveal-delay-2">
-          <div class="diferencial-icon">&#127793;</div>
-          <h3>Selecionado</h3>
-          <p>Cada grão passa por rigoroso processo de seleção para garantir a melhor qualidade.</p>
+        <div class="diferencial-card">
+          <h3>Grão a grão</h3>
+          <p>Cada grão passa por seleção antes de virar fubá.</p>
         </div>
-        <div class="diferencial-card reveal reveal-delay-3">
-          <div class="diferencial-icon">&#9728;&#65039;</div>
-          <h3>Secagem Natural</h3>
-          <p>Processo de secagem natural que preserva todos os nutrientes e o sabor autêntico do milho.</p>
+        <div class="diferencial-card">
+          <h3>Secagem natural</h3>
+          <p>Secagem ao sol, do jeito antigo, que preserva o sabor e os nutrientes.</p>
         </div>
       </div>
     </div>
@@ -1294,33 +1179,32 @@
   <!-- ESTRUTURA -->
   <section class="estrutura section-padding">
     <div class="container text-center">
-      <span class="section-label reveal">Conheça</span>
-      <h2 class="section-title reveal reveal-delay-1">Nossa <strong>Estrutura</strong></h2>
-      <p class="section-subtitle reveal reveal-delay-2">Uma produção artesanal com 60 jogos de pedras de moagem.</p>
+      <h2 class="section-title reveal">Nossa <strong>Estrutura</strong></h2>
+      <p class="section-subtitle reveal">60 jogos de pedras de moagem, tudo movido a água.</p>
 
-      <div class="gallery-grid">
-        <div class="gallery-item reveal-scale reveal-delay-1">
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
           <img src="assets/estrutura-1.webp" alt="Produção artesanal São Lucas" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-2">
+        <div class="gallery-item">
           <img src="assets/estrutura-2.webp" alt="Empacotamento do fubá" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-3">
+        <div class="gallery-item">
           <img src="assets/estrutura-3.webp" alt="Linha de moinhos d'água" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-4">
+        <div class="gallery-item">
           <img src="assets/estrutura-4.webp" alt="Milho selecionado para moagem" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-5">
+        <div class="gallery-item">
           <img src="assets/estrutura-5.webp" alt="Alimentação do moinho" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-6">
+        <div class="gallery-item">
           <img src="assets/estrutura-6.webp" alt="Controle de qualidade" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-7">
+        <div class="gallery-item">
           <img src="assets/estrutura-7.webp" alt="Pedras de moagem em operação" loading="lazy" />
         </div>
-        <div class="gallery-item reveal-scale reveal-delay-8">
+        <div class="gallery-item">
           <img src="assets/estrutura-8.webp" alt="Pedras de moagem tradicionais" loading="lazy" />
         </div>
       </div>
@@ -1334,7 +1218,7 @@
         <div class="historia-text reveal-left">
           <span class="section-label">Desde 2002</span>
           <h2>Nossa <strong>História</strong></h2>
-          <p>Em março de 2002, alugamos uma fazenda no Córrego dos Motta em Itatiaiuçu, MG. Começamos com um pequeno moinho d'água e, graças à dedicação e ao compromisso com a qualidade, hoje contamos com 60 jogos de pedras de moagem, produzindo o melhor fubá da região.</p>
+          <p>Tudo começou em 2002, numa fazenda no Córrego dos Motta, em Itatiaiuçu. Um moinho d'água, muita vontade e o compromisso de fazer fubá de verdade. Hoje são 60 jogos de pedras de moagem e o mesmo cuidado do primeiro dia.</p>
 
           <div class="stats-row">
             <div class="stat-item">
@@ -1354,16 +1238,16 @@
 
         <div class="missao-visao reveal-right">
           <div class="mv-card">
-            <h4>&#9889; Qualidade</h4>
-            <p>Buscamos sempre o melhor produto de nossos produtores e fornecedores para o consumo humano, com rigoroso controle de qualidade em todas as etapas.</p>
+            <h4>Qualidade</h4>
+            <p>Controle rigoroso em cada etapa, do campo ao pacote. Só trabalhamos com o melhor milho dos nossos produtores.</p>
           </div>
           <div class="mv-card">
-            <h4>&#127919; Missão</h4>
-            <p>Colocar no mercado produtos 100% naturais e artesanais, mantendo a tradição e a originalidade do verdadeiro fubá de moinho d'água.</p>
+            <h4>Missão</h4>
+            <p>Levar pra mesa do brasileiro um fubá 100% natural, feito do jeito tradicional, em moinho d'água de verdade.</p>
           </div>
           <div class="mv-card">
-            <h4>&#128065; Visão</h4>
-            <p>Conquistar o reconhecimento dos consumidores como um produto original e confiável, referência em qualidade no segmento.</p>
+            <h4>Visão</h4>
+            <p>Ser referência em fubá artesanal, reconhecido pela qualidade e pela tradição que a gente carrega desde 2002.</p>
           </div>
         </div>
       </div>
@@ -1374,8 +1258,7 @@
   <section class="produtos section-padding" id="produtos">
     <div class="container">
       <div class="text-center">
-        <span class="section-label reveal">Conheça</span>
-        <h2 class="section-title reveal reveal-delay-1">Nossos <strong>Produtos</strong></h2>
+        <h2 class="section-title reveal">Nosso <strong>Produto</strong></h2>
       </div>
 
       <div class="produto-showcase" style="margin-top: 48px;">
@@ -1384,7 +1267,7 @@
         </div>
         <div class="produto-info reveal-right">
           <h3>Fubá Moinho D'água</h3>
-          <p>Fubá artesanal moído em moinho d'água tradicional, preservando todo o sabor e nutrientes do milho.</p>
+          <p>Moído em moinho d'água do jeito que sempre foi feito. Sem conservantes, sem aditivos — só milho de verdade.</p>
           <div class="produto-badges">
             <span class="produto-badge produto-badge--gold">100% Natural</span>
             <span class="produto-badge produto-badge--green">Artesanal</span>
@@ -1402,13 +1285,11 @@
   <!-- RECEITAS -->
   <section class="receitas section-padding" id="receitas">
     <div class="container text-center">
-      <span class="section-label reveal">Deliciosas</span>
-      <h2 class="section-title reveal reveal-delay-1">Receitas com <strong>Fubá São Lucas</strong></h2>
-      <p class="section-subtitle reveal reveal-delay-2">Clique para ver a receita completa</p>
+      <h2 class="section-title reveal">Receitas com <strong>Fubá São Lucas</strong></h2>
 
       <div class="receitas-grid">
         <!-- Receita 1 -->
-        <div class="receita-card reveal reveal-delay-1">
+        <div class="receita-card">
           <div class="receita-card-img">
             <img src="assets/recipe-bolo-goiabada.webp" alt="Bolo de Fubá com Pedaços de Goiabada" loading="lazy" />
           </div>
@@ -1438,7 +1319,7 @@
         </div>
 
         <!-- Receita 2 -->
-        <div class="receita-card reveal reveal-delay-2">
+        <div class="receita-card">
           <div class="receita-card-img">
             <img src="assets/recipe-bolo-diet.webp" alt="Broa de Fubá" loading="lazy" />
           </div>
@@ -1470,7 +1351,7 @@
         </div>
 
         <!-- Receita 3 -->
-        <div class="receita-card reveal reveal-delay-3">
+        <div class="receita-card">
           <div class="receita-card-img">
             <img src="assets/recipe-bolo-simples.webp" alt="Bolo de Fubá" loading="lazy" />
           </div>
@@ -1506,13 +1387,11 @@
   <!-- ONDE ENCONTRAR -->
   <section class="distribuidores section-padding" id="distribuidores">
     <div class="container text-center">
-      <span class="section-label reveal">Pontos de Venda</span>
-      <h2 class="section-title reveal reveal-delay-1">Onde <strong>Encontrar</strong></h2>
+      <h2 class="section-title reveal">Onde <strong>Encontrar</strong></h2>
 
       <!-- CEASA MINAS ATACADO -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
-          <div class="distribuidores-category-icon ceasa">🏬</div>
           <h3 class="distribuidores-category-title">Ceasa Minas Atacado</h3>
         </div>
         <div class="distribuidores-address">
@@ -1520,79 +1399,79 @@
           Rodovia BR-040 km 688 Kennedy, Contagem/MG - CEP 32.145-900
         </div>
         <div class="distribuidores-grid">
-          <div class="distribuidores-card reveal reveal-delay-1">
+          <div class="distribuidores-card">
             <h3>Citromar</h3>
             <p>PAV E</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-2">
+          <div class="distribuidores-card">
             <h3>Agropassos</h3>
             <p>PAV J</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-3">
+          <div class="distribuidores-card">
             <h3>Legumes Pinheirão</h3>
             <p>PAV F</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-4">
+          <div class="distribuidores-card">
             <h3>São Judas Tadeu</h3>
             <p>PAV E</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-1">
+          <div class="distribuidores-card">
             <h3>Alho Campeão</h3>
             <p>PAV D</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-2">
+          <div class="distribuidores-card">
             <h3>JM Cereais</h3>
             <p>PAV B</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-3">
+          <div class="distribuidores-card">
             <h3>Hiperútil</h3>
             <p>PAV B</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-4">
+          <div class="distribuidores-card">
             <h3>Pioneira</h3>
             <p>PAV 8</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-1">
+          <div class="distribuidores-card">
             <h3>Santa Ceia</h3>
             <p>PAV 8</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-2">
+          <div class="distribuidores-card">
             <h3>Única</h3>
             <p>PAV 9</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-3">
+          <div class="distribuidores-card">
             <h3>D'Mamão</h3>
             <p>PAV N</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-4">
+          <div class="distribuidores-card">
             <h3>Frutas Linhares</h3>
             <p>PAV Q</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-1">
+          <div class="distribuidores-card">
             <h3>Frutas Linhares</h3>
             <p>PAV R</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-2">
+          <div class="distribuidores-card">
             <h3>BH Manga</h3>
             <p>PAV L</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-3">
+          <div class="distribuidores-card">
             <h3>A3 Com</h3>
             <p>PAV E</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-4">
+          <div class="distribuidores-card">
             <h3>G10</h3>
             <p>PAV C</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-1">
+          <div class="distribuidores-card">
             <h3>Minas Prata</h3>
             <p>PAV R</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-2">
+          <div class="distribuidores-card">
             <h3>Brasnica</h3>
             <p>PAV S</p>
           </div>
-          <div class="distribuidores-card reveal reveal-delay-3">
+          <div class="distribuidores-card">
             <h3>Camponês</h3>
             <p>PAV E1</p>
           </div>
@@ -1602,7 +1481,6 @@
       <!-- VAREJO -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
-          <div class="distribuidores-category-icon varejo">🛒</div>
           <h3 class="distribuidores-category-title">Varejo</h3>
         </div>
         <div class="distribuidores-grid">
@@ -1652,7 +1530,6 @@
       <!-- DISTRIBUIDORES -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
-          <div class="distribuidores-category-icon distrib">🚛</div>
           <h3 class="distribuidores-category-title">Distribuidores</h3>
         </div>
         <div class="distribuidores-grid">
@@ -1674,9 +1551,7 @@
   <section class="contato section-padding" id="contato">
     <div class="container">
       <div class="text-center" style="margin-bottom: 56px;">
-        <span class="section-label reveal">Fale Conosco</span>
-        <h2 class="section-title reveal reveal-delay-1"><strong>Contato</strong></h2>
-        <p class="section-subtitle reveal reveal-delay-2">Estamos prontos para atender você e tirar todas as suas dúvidas</p>
+        <h2 class="section-title reveal"><strong>Contato</strong></h2>
       </div>
 
       <div class="contato-grid">
