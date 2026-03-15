@@ -259,7 +259,12 @@
     /* ============ HERO ============ */
     .hero {
       position: relative;
-      min-height: 100vh;
+      height: 300vh;
+    }
+    .hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -270,11 +275,18 @@
       inset: 0;
       z-index: 0;
     }
-    .hero-bg img {
+    .hero-bg canvas {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.03);
+      display: block;
+    }
+    .hero-bg img.hero-fallback {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
     }
     .hero-bg::after {
       content: '';
@@ -282,10 +294,11 @@
       inset: 0;
       background:
         linear-gradient(180deg,
-          rgba(44, 24, 16, 0.3) 0%,
-          rgba(44, 24, 16, 0.5) 40%,
-          rgba(44, 24, 16, 0.85) 100%
+          rgba(44, 24, 16, 0.25) 0%,
+          rgba(44, 24, 16, 0.4) 40%,
+          rgba(44, 24, 16, 0.8) 100%
         );
+      z-index: 1;
     }
     .hero-content {
       position: relative;
@@ -1164,9 +1177,11 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="hero-sticky">
     <div class="hero-bg">
-      <img src="assets/hero-bg.webp" alt="Campo de milho" />
+      <canvas id="heroCanvas"></canvas>
+      <img src="assets/hero-bg.webp" alt="Campo de milho" class="hero-fallback" id="heroFallback" />
     </div>
     <div class="hero-content">
       <div class="hero-badge reveal">Desde 2002</div>
@@ -1179,6 +1194,7 @@
         </a>
         <a href="#contato" class="btn-secondary">Fale com a gente</a>
       </div>
+    </div>
     </div>
   </section>
 
@@ -1845,6 +1861,96 @@
       if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
       if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
     });
+
+    // ===== HERO SCROLL CANVAS ANIMATION =====
+    (function() {
+      const FRAME_COUNT = 90;
+      const FRAME_DIR = 'assets/frames/desktop';
+      const canvas = document.getElementById('heroCanvas');
+      const ctx = canvas.getContext('2d');
+      const heroSection = document.getElementById('hero');
+      const fallback = document.getElementById('heroFallback');
+      const frames = [];
+      let loaded = 0;
+      let currentFrame = 0;
+      let targetFrame = 0;
+
+      // Set canvas size
+      function resizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = canvas.offsetWidth * dpr;
+        canvas.height = canvas.offsetHeight * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        drawFrame(Math.round(currentFrame));
+      }
+
+      // Draw a frame covering the canvas like object-fit: cover
+      function drawFrame(idx) {
+        const img = frames[idx];
+        if (!img) return;
+        const cw = canvas.offsetWidth;
+        const ch = canvas.offsetHeight;
+        const iw = img.width;
+        const ih = img.height;
+        const scale = Math.max(cw / iw, ch / ih);
+        const sw = iw * scale;
+        const sh = ih * scale;
+        const sx = (cw - sw) / 2;
+        const sy = (ch - sh) / 2;
+        ctx.drawImage(img, sx, sy, sw, sh);
+      }
+
+      // Load frames progressively
+      function loadFrame(i) {
+        return new Promise(resolve => {
+          const img = new Image();
+          img.onload = () => { frames[i] = img; loaded++; resolve(); };
+          img.onerror = () => resolve();
+          img.src = FRAME_DIR + '/frame-' + String(i + 1).padStart(4, '0') + '.webp';
+        });
+      }
+
+      async function loadAllFrames() {
+        // Load first frame immediately
+        await loadFrame(0);
+        if (frames[0]) {
+          fallback.style.display = 'none';
+          resizeCanvas();
+        }
+        // Load rest in batches
+        const batch = 10;
+        for (let i = 1; i < FRAME_COUNT; i += batch) {
+          const promises = [];
+          for (let j = i; j < Math.min(i + batch, FRAME_COUNT); j++) {
+            promises.push(loadFrame(j));
+          }
+          await Promise.all(promises);
+        }
+      }
+
+      // Scroll progress
+      function getScrollProgress() {
+        const rect = heroSection.getBoundingClientRect();
+        const scrollable = rect.height - window.innerHeight;
+        if (scrollable <= 0) return 0;
+        return Math.max(0, Math.min(1, -rect.top / scrollable));
+      }
+
+      // Animation loop
+      function animate() {
+        targetFrame = Math.floor(getScrollProgress() * (FRAME_COUNT - 1));
+        currentFrame += (targetFrame - currentFrame) * 0.12;
+        const frameIdx = Math.round(currentFrame);
+        drawFrame(frameIdx);
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      loadAllFrames().then(() => {
+        resizeCanvas();
+        animate();
+      });
+    })();
 
   </script>
 </body>
