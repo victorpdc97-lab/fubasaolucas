@@ -408,6 +408,25 @@
       box-shadow: 0 8px 30px rgba(44, 24, 16, 0.06);
       border-color: rgba(212, 160, 23, 0.25);
     }
+    .diferencial-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(212, 160, 23, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .diferencial-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-corn-dark);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
     .diferencial-card h3 {
       font-family: var(--font-heading);
       font-size: 1.45rem;
@@ -845,6 +864,16 @@
       gap: 12px;
       margin-bottom: 24px;
     }
+    .distribuidores-category-header svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--color-corn-dark);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
     .distribuidores-category-title {
       font-family: var(--font-heading);
       font-size: 1.45rem;
@@ -1161,14 +1190,23 @@
 
       <div class="diferenciais-grid reveal">
         <div class="diferencial-card">
+          <div class="diferencial-icon">
+            <svg viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M12 20V10"/><path d="M12 10c-2-3-5-4-5-7a5 5 0 0 1 10 0c0 3-3 4-5 7z"/></svg>
+          </div>
           <h3>Milho limpo</h3>
           <p>Só entra milho bem cuidado e selecionado no nosso moinho.</p>
         </div>
         <div class="diferencial-card">
+          <div class="diferencial-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 5v2"/><path d="M12 17v2"/><path d="M5 12h2"/><path d="M17 12h2"/><path d="M7.05 7.05l1.41 1.41"/><path d="M15.54 15.54l1.41 1.41"/><path d="M7.05 16.95l1.41-1.41"/><path d="M15.54 8.46l1.41-1.41"/></svg>
+          </div>
           <h3>Grão a grão</h3>
           <p>Cada grão passa por seleção antes de virar fubá.</p>
         </div>
         <div class="diferencial-card">
+          <div class="diferencial-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>
+          </div>
           <h3>Secagem natural</h3>
           <p>Secagem ao sol, do jeito antigo, que preserva o sabor e os nutrientes.</p>
         </div>
@@ -1392,6 +1430,7 @@
       <!-- CEASA MINAS ATACADO -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg>
           <h3 class="distribuidores-category-title">Ceasa Minas Atacado</h3>
         </div>
         <div class="distribuidores-address">
@@ -1481,6 +1520,7 @@
       <!-- VAREJO -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <h3 class="distribuidores-category-title">Varejo</h3>
         </div>
         <div class="distribuidores-grid">
@@ -1530,6 +1570,7 @@
       <!-- DISTRIBUIDORES -->
       <div class="distribuidores-category reveal">
         <div class="distribuidores-category-header">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           <h3 class="distribuidores-category-title">Distribuidores</h3>
         </div>
         <div class="distribuidores-grid">
