@@ -272,11 +272,13 @@
       inset: 0;
       z-index: 0;
     }
-    .hero-bg img {
+    .hero-bg img,
+    .hero-bg video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.05);
+      transform: scale(1.15);
+      transform-origin: top left;
       transition: transform 8s linear;
     }
     .hero-bg::after {
@@ -1176,7 +1178,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="assets/estrutura-5.webp" alt="Campo de milho" />
+      <video autoplay muted loop playsinline>
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero-content">
       <div class="hero-badge reveal">Desde 2002</div>
@@ -1820,11 +1824,12 @@
     }
 
     // ===== HERO PARALLAX =====
-    const heroBg = document.querySelector('.hero-bg img');
+    const heroBg = document.querySelector('.hero-bg video') || document.querySelector('.hero-bg img');
     window.addEventListener('scroll', () => {
       if (heroBg) {
         const scrolled = window.scrollY;
-        heroBg.style.transform = 'scale(1.05) translateY(' + (scrolled * 0.15) + 'px)';
+        heroBg.style.transform = 'scale(1.15) translateY(' + (scrolled * 0.12) + 'px)';
+        heroBg.style.transformOrigin = 'top left';
       }
     }, { passive: true });
   </script>
