@@ -21,8 +21,8 @@
   <meta name="theme-color" content="#2C1810" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://fubasaolucas.com.br/" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon-small.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
   <link rel="dns-prefetch" href="https://maps.google.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -273,12 +273,11 @@
     /* ============ HERO ============ */
     .hero {
       position: relative;
-      height: 140vh;
+      height: 100vh;
     }
     .hero-sticky {
-      position: sticky;
-      top: 0;
-      height: 100vh;
+      position: relative;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1143,7 +1142,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero { height: 100vh; }
+      .hero { height: 100vh; min-height: 0; }
       .section-padding { padding: 72px 0; }
       .distribuidores-grid { grid-template-columns: repeat(2, 1fr); }
       .menu-toggle { display: block; }
@@ -1212,6 +1211,7 @@
         <ul class="navbar-links">
           <li><a href="#produtos">Produtos</a></li>
           <li><a href="#receitas">Receitas</a></li>
+          <li><a href="#distribuidores">Onde Encontrar</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -1282,27 +1282,35 @@
       <div class="gallery-grid reveal">
         <div class="gallery-item">
           <img src="assets/estrutura-1.webp" alt="Produção artesanal São Lucas" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Produção artesanal</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-2.webp" alt="Empacotamento do fubá" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Empacotamento</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-3.webp" alt="Linha de moinhos d'água" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Moinhos d'água</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-4.webp" alt="Milho selecionado para moagem" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Milho selecionado</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-5.webp" alt="Alimentação do moinho" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Alimentação do moinho</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-6.webp" alt="Controle de qualidade" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Controle de qualidade</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-7.webp" alt="Pedras de moagem em operação" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Pedras de moagem</span>
         </div>
         <div class="gallery-item">
           <img src="assets/estrutura-8.webp" alt="Pedras de moagem tradicionais" loading="lazy" decoding="async" />
+          <span class="gallery-caption">Moagem tradicional</span>
         </div>
       </div>
     </div>
@@ -1386,7 +1394,7 @@
 
       <div class="receitas-grid">
         <!-- Receita 1 -->
-        <div class="receita-card">
+        <div class="receita-card reveal reveal-delay-1">
           <div class="receita-card-img">
             <img src="assets/recipe-fuba-suado.webp" alt="Fubá Suado com Queijo" loading="lazy" decoding="async" />
           </div>
@@ -1414,7 +1422,7 @@
         </div>
 
         <!-- Receita 2 -->
-        <div class="receita-card">
+        <div class="receita-card reveal reveal-delay-2">
           <div class="receita-card-img">
             <img src="assets/recipe-bolo-diet.webp" alt="Broa de Fubá" loading="lazy" decoding="async" />
           </div>
@@ -1446,7 +1454,7 @@
         </div>
 
         <!-- Receita 3 -->
-        <div class="receita-card">
+        <div class="receita-card reveal reveal-delay-3">
           <div class="receita-card-img">
             <img src="assets/recipe-bolo-simples.webp" alt="Bolo de Fubá" loading="lazy" decoding="async" />
           </div>
@@ -1716,14 +1724,15 @@
           <ul class="footer-links">
             <li><a href="#produtos">Produtos</a></li>
             <li><a href="#receitas">Receitas</a></li>
+            <li><a href="#distribuidores">Onde Encontrar</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
         <div>
           <h5>Contato</h5>
           <ul class="footer-links">
-            <li><a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." target="_blank" rel="noopener">WhatsApp: (31) 98659-5483</a></li>
-            <li><a href="tel:+5531986595483">Telefone: (31) 98659-5483</a></li>
+            <li><a href="https://wa.me/5531986595483?text=Olá, vim pelo site e gostaria de mais informações." target="_blank" rel="noopener noreferrer">WhatsApp: (31) 98659-5483</a></li>
+            <li><a href="tel:+5531986595483" target="_blank" rel="noopener">Telefone: (31) 98659-5483</a></li>
           </ul>
         </div>
       </div>
